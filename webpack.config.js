@@ -21,7 +21,6 @@ const extensionConfig = {
   },
   externals: {
     vscode: 'commonjs vscode' // the vscode-module is created on-the-fly and must be excluded. Add other modules that cannot be webpack'ed, 📖 -> https://webpack.js.org/configuration/externals/
-    // modules added here also need to be added in the .vscodeignore file
   },
   resolve: {
     mainFields: ['browser', 'module', 'main'], // look for `browser` entry point in imported 
@@ -41,7 +40,6 @@ const extensionConfig = {
       }
     ]
   },
-  devtool: 'nosources-source-map',
   infrastructureLogging: {
     level: "log", // enables logging required for problem matchers
   },
