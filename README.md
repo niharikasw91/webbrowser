@@ -24,10 +24,11 @@ Then, from your extension's path, start an HTTP server by running npx serve:
 
 Should see the output like the following 
 npx: installed 78 in 2.196s
+    
     ----------------------------------------------------
    │                                                    │
    │   Serving!                                         │
-   │                                                    │
+   │   :---: | :---:                                               │
    │   - Local:            https://localhost:5000       │
    │   - On Your Network:  https://172.19.255.26:5000   │
    │                                                    │
