@@ -1,71 +1,45 @@
 # hello-world README
 
-This is the README for your extension "hello-world". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "hello-world". After writing up a brief description, we recommend including 
 
-## Features
+## Test your web extension in vscode.dev
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+how your extension behaves in the actual vscode[https://vscode.dev/] environment.
 
-For example if there is an image subfolder under your extension project workspace:
+To see your extension on vscode.dev, you first need to host it from your machine for vscode.dev to download and run.
 
-\!\[feature X\]\(images/feature-x.png\)
+First, you'll need to install mkcert[https://github.com/FiloSottile/mkcert#installation]
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Then, generate the localhost.pem and localhost-key.pem files into a location you won't lose them (for example $HOME/certs):
 
-## Requirements
+`
+    $ mkdir -p $HOME/certs
+    $ cd $HOME/certs
+    $ mkcert -install
+    $ mkcert localhost
+`
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Then, from your extension's path, start an HTTP server by running npx serve:
+`$ npx serve --cors -l 5000 --ssl-cert $HOME/certs/localhost.pem --ssl-key $HOME/certs/localhost-key.pem`
 
-## Extension Settings
+Should see the output like the following 
+npx: installed 78 in 2.196s
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+   ┌────────────────────────────────────────────────────┐
+   │                                                    │
+   │   Serving!                                         │
+   │                                                    │
+   │   - Local:            https://localhost:5000       │
+   │   - On Your Network:  https://172.19.255.26:5000   │
+   │                                                    │
+   │   Copied local address to clipboard!               │
+   │                                                    │
+   └────────────────────────────────────────────────────┘
 
-For example:
+   Finally, open [https://vscode.dev], run Developer: Install Extension From Location... from the Command Palette (⇧⌘P), paste the URL from above, [https://localhost:5000] in the example, and select Install.
 
-This extension contributes the following settings:
+   # Run you command in the web-browser version
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+   cntrl+shift+p -> type your command
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+   Check logs in the vscode terminal
