@@ -1,6 +1,6 @@
-# hello-world README
+# README
 
-This is the README for your extension "hello-world". After writing up a brief description, we recommend including 
+This is the README for your extension "hello-world" in web-browser version. After writing up a brief description, we recommend including 
 
 ## Test your web extension in vscode.dev
 
