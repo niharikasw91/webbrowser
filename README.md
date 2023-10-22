@@ -40,3 +40,6 @@ npx: installed 78 in 2.196s
    cntrl+shift+p -> type your command
 
    Check logs in the vscode terminal
+
+   # Compile code using wasi-sdk 
+   `../wasi-sdk-20.0/bin/clang hello.c -o ./hello.wasm`  
