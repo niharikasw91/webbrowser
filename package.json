@@ -36,7 +36,8 @@
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "test-extension" : "npm run compile-web && npx serve --cors -l 58877 --ssl-cert $HOME/certs/localhost.pem --ssl-key $HOME/certs/localhost-key.pem"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.2",

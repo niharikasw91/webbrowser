@@ -22,6 +22,9 @@ Then, generate the localhost.pem and localhost-key.pem files into a location you
 Then, from your extension's path, start an HTTP server by running npx serve:
 `$ npx serve --cors -l 5000 --ssl-cert $HOME/certs/localhost.pem --ssl-key $HOME/certs/localhost-key.pem`
 
+or use the script which compiles and start the extension locally 
+`npm run test-extension`
+
 Should see the output like the following 
 npx: installed 78 in 2.196s
     
