@@ -21,9 +21,9 @@
         "title": "Hello World"
       },
       {
-        "command": "wasm-wasi-go-example.run",
+        "command": "wasm-wasi-c-example.run",
         "category": "WASM Example",
-        "title": "Run Go Hello World"
+        "title": "Run C Hello World"
       }
     ]
   },

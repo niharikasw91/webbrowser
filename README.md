@@ -42,4 +42,5 @@ npx: installed 78 in 2.196s
    Check logs in the vscode terminal
 
    # Compile code using wasi-sdk 
+   Required to install - Microsoft's WebAssembly runtime extension
    `../wasi-sdk-20.0/bin/clang hello.c -o ./hello.wasm`  
